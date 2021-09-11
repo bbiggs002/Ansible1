@@ -1,5 +1,5 @@
-london.bignet1.com
-nyc.bignet1.com
-sanfranunifi.bignet1.com
-pihole.bignet1.com
-freepbx.bignet1.com
+bb@london.bignet1.com ansible_port=222
+bb@nyc.bignet1.com ansible_port=222
+bb@sanfranunifi.bignet1.com ansible_port=222
+root@pihole.bignet1.com
+root@freepbx.bignet1.com ansible_port=222
