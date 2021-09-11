@@ -1,5 +1,5 @@
-bb@london.bignet1.com ansible_port=222
-bb@nyc.bignet1.com ansible_port=222
-bb@sanfranunifi.bignet1.com ansible_port=222
-root@pihole.bignet1.com
-root@freepbx.bignet1.com ansible_port=222
+bb@london.bignet1.com ansible_port=222 apache_package=apache2 php_package=libapache2-mod-php
+bb@nyc.bignet1.com ansible_port=222 apache_package=apache2 php_package=libapache2-mod-php
+bb@sanfranunifi.bignet1.com ansible_port=222 apache_package=apache2 php_package=libapache2-mod-php
+root@pihole.bignet1.com apache_package=apache2 php_package=libapache2-mod-php
+root@freepbx.bignet1.com ansible_port=222 apache_package=httpd php_package=php
