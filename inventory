@@ -10,4 +10,5 @@ bb@toronto.bignet1.com ansible_port=222
 
 [file_servers]
 bb@toronto.bignet1.com ansible_port=222
+root@singapore.bignet1.com
 
