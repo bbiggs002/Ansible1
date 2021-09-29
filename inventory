@@ -4,7 +4,6 @@ bb@nyc.bignet1.com ansible_port=222
 
 [db_servers]
 bb@sanfranunifi.bignet1.com ansible_port=222
-root@pihole.bignet1.com
 root@freepbx.bignet1.com ansible_port=222
 bb@toronto.bignet1.com ansible_port=222
 

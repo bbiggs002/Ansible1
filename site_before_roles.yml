@@ -17,6 +17,31 @@
       update_cache: yes
     when: ansible_distribution == "Ubuntu"
 
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: create jasper user
+    tags: always
+    user:
+      name: jasper
+      groups: root
+
+  - name: add ssh key for jasper
+    tags: always
+    authorized_key:
+      user: jasper
+      key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBj4+BdzLfBsFcAlpV8ouJb5RY7ZDa/alZfVg8X4hk7Y ansible"
+
+  - name: add sudoers file for jasper
+    tags: always
+    copy:
+      src: sudoer_jasper
+      dest: /etc/sudoers.d/jasper
+      owner: root
+      group: root
+      mode: 0440
 - hosts: web_servers
   become: true
   tasks:
