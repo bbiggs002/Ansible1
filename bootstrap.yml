@@ -1,0 +1,41 @@
+---
+ 
+- hosts: all
+  become: true
+  pre_tasks:
+ 
+  - name: install updates (CentOS)
+    tags: always
+    dnf:
+      update_only: yes
+      update_cache: yes
+    when: ansible_distribution == "CentOS"
+ 
+  - name: install updates (Ubuntu)
+    tags: always
+    apt:
+      upgrade: dist
+      update_cache: yes
+    when: ansible_distribution == "Ubuntu"
+ 
+- hosts: all
+  become: true
+  tasks:
+ 
+  - name: create jasper user
+    user:
+      name: jasper
+      groups: root
+ 
+  - name: add ssh key for jasper
+    authorized_key:
+      user: jasper
+      key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBj4+BdzLfBsFcAlpV8ouJb5RY7ZDa/alZfVg8X4hk7Y ansible"
+      
+  - name: add sudoers file for jasper
+    copy:
+      src: sudoer_jasper
+      dest: /etc/sudoers.d/jasper
+      owner: root
+      group: root
+      mode: 0440

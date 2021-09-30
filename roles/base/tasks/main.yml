@@ -1,0 +1,10 @@
+- name: create jasper user
+  user:
+    name: jasper
+    groups: root
+
+
+- name: add ssh key for jasper
+  authorized_key:
+    user: jasper
+    key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBj4+BdzLfBsFcAlpV8ouJb5RY7ZDa/alZfVg8X4hk7Y ansible"

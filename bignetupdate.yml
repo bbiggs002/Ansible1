@@ -17,6 +17,13 @@
       update_cache: yes
     changed_when: false
     when: ansible_distribution == "Ubuntu"
+
+  - name: update repo cache (Debian)
+    tags: always
+    package:
+      update_cache: yes
+    changed_when: false
+    when: ansible_distribution == "Debian"
   
 - hosts: all
   become: true
